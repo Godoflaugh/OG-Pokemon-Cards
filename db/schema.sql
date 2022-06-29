@@ -6,13 +6,13 @@ USE pokemon_db;
 CREATE TABLE pokemon_gen1 (
 ID int NOT NULL PRIMARY KEY,
 name VARCHAR(50) NOT NULL,
-imageURL VARCHAR (255) NOT NULL,
+image_url VARCHAR (255) NOT NULL,
 type VARCHAR (30) NOT NULL,
 summary VARCHAR (255) NOT NULL
 );
 
 
-INSERT INTO pokemon_gen1 (ID, name, imageURL, type, summary)
+INSERT INTO pokemon_gen1 (ID, name, image_url, type, summary)
 VALUES (001, "Bulbasaur", "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png", "Grass", "A strange seed was planted on its back at birth. The plant sprouts and grows with this pokemon"),
 (002, "Ivysaur", "https://assets.pokemon.com/assets/cms2/img/pokedex/full/002.png", "Grass", "When the bulb on its back grows large, it appears to lose the ability to stand on it's hind legs."),
 (003, "Venusaur", "https://assets.pokemon.com/assets/cms2/img/pokedex/full/003.png", "Grass", "It's plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight."),

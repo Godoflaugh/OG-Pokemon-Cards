@@ -1,6 +1,6 @@
 USE pokemon_db;
 
-INSERT INTO pokemon_gen1 (ID, name, imageURL, type, summary)
+INSERT INTO pokemon_gen1 (ID, name, image_url, type, summary)
 VALUES (001, "Bulbasaur", "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png", "Grass", "A strange seed was planted on its back at birth. The plant sprouts and grows with this pokemon"),
 (002, "Ivysaur", "https://assets.pokemon.com/assets/cms2/img/pokedex/full/002.png", "Grass", "When the bulb on its back grows large, it appears to lose the ability to stand on it's hind legs."),
 (003, "Venusaur", "https://assets.pokemon.com/assets/cms2/img/pokedex/full/003.png", "Grass", "It's plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight."),
@@ -12,4 +12,4 @@ VALUES (001, "Bulbasaur", "https://assets.pokemon.com/assets/cms2/img/pokedex/fu
 (009, "Blastoise", "https://assets.pokemon.com/assets/cms2/img/pokedex/full/009.png", "Water", "It crushes its foe under it's heavy body to cause fainting. In a pinch, it will withdraw inside its shell."),
 (025, "Pikachu", "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png", "Electric", "Pikachu that can geerate powerful electricity have cheek sacs that are extra soft and super stretchy.");
 
-INSERT INTO deckList (ID, name, imageURL, type, summary)
+-- INSERT INTO deckList (ID, name, imageURL, type, summary)
