@@ -1,8 +1,8 @@
 const Pokemon = require('./Pokemon');
-const Deck = require('./Deck');
+const User = require('./User');
 
-// Set up relationship between Pokemon and Deck (many to many)
-Pokemon.belongsToMany(Deck, { through: 'pokemon_deck' });
-Deck.belongsToMany(Pokemon, { through: 'pokemon_deck' });
+// Set up relationship between Pokemon and User (many to many)
+Pokemon.belongsToMany(User, { through: 'pokemon_user' });
+User.belongsToMany(Pokemon, { through: 'pokemon_user' });
 
-module.exports = { Pokemon, Deck };
+module.exports = { Pokemon, User };
