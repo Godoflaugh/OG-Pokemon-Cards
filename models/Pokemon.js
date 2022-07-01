@@ -33,7 +33,7 @@ Pokemon.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'pokemon_gen1',
+    modelName: 'pokemon',
   }
 );
 

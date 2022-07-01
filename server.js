@@ -1,6 +1,5 @@
 //Pulling in modules
 const express = require("express")
-
 const session = require('express-session')
 const SequelizeStore = require('connect-session-sequelize')(session.Store)
 
@@ -8,7 +7,6 @@ const router = require("./routes")
 const sequelize = require('./config/connection')
 
 const { Pokemon, User } = require('./models')
-
 
 const PORT = process.env.PORT || 3001
 
@@ -22,9 +20,9 @@ app.use(express.static("public"))
 app.use(session({
   secret: 'keyboard cat',
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false,
   cookie: {
-    maxAge: 3600 * 1000, // 1 hour
+    maxAge: 24 * 3600 * 1000, // 1 hour
   },
   store: new SequelizeStore({
     db: sequelize,
@@ -45,9 +43,7 @@ app.use(session({
 }))
 
 //Turn on Routes
-// app.use(router)
-
-run()
+app.use(router)
 
 run()
 
@@ -74,8 +70,6 @@ async function run() {
   // await pikachu.addDecks([deck1])
 
   // Test to show all pokemons belonging to a deck
-
   // const decks = await Deck.findAll({include: [{ model: Pokemon }]})
   // console.log(decks)
-
 }
