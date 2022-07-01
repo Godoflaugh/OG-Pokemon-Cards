@@ -31,23 +31,8 @@ app.use(session({
   }),
 }))
 
-// Use express-session middleware
-app.use(session({
-  secret: 'keyboard cat',
-  resave: false,
-  saveUninitialized: true,
-  cookie: {
-    maxAge: 3600 * 1000, // 1 hour
-  },
-  store: new SequelizeStore({
-    db: sequelize,
-  }),
-}))
-
 //Turn on Routes
-// app.use(router)
-
-run()
+app.use(router)
 
 run()
 
