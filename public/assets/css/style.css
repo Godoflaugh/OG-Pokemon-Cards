@@ -1,0 +1,320 @@
+:root {
+
+  --main-color: #a7ccff;
+  --footer-color: #474747;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color:rgb(247, 247, 247)
+}
+
+.navbar {
+  background-color: var(--main-color);
+  border: 5px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(201, 21, 21)
+}
+
+#navbutt {
+  font-size: 20px !important;
+}
+
+#pokeball {
+  width: auto;
+  height: 90px
+}
+
+.navbar-brand {
+  font-size: 50px !important;
+  color:rgb(75, 75, 75);
+}
+
+.music-box {
+  background-color: rgb(242, 242, 242);
+  margin: 0px 100px;
+  padding: 50px 50px;
+  box-shadow:
+  0px 0px 1.2px rgba(0, 0, 0, 0.073),
+  0px 0px 4px rgba(0, 0, 0, 0.107),
+  0px 0px 18px rgba(0, 0, 0, 0.18);
+}
+
+.music-player {
+  display: flex;
+  justify-content: center;
+  margin: 0px 100px;
+}
+
+.music-container {
+  width: 50%;
+  display: flex;
+  padding: 20px 60px;
+  margin: 100px 100px;
+  z-index: 10;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 15px;
+  border: solid 6px var(--main-color);
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+
+.img-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 300px;
+}
+
+.img-container img {
+  width: inherit;
+  height: 300px;
+  border-radius: 80%;
+  -webkit-border-radius: 80%;
+  -moz-border-radius: 80%;
+  -ms-border-radius: 80%;
+  -o-border-radius: 80%;
+  object-fit: cover;
+  bottom: 0;
+  left: 0;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+
+.music-container.play {
+  box-shadow:
+  0px 0px 3.2px rgba(79, 113, 227, 0.6),
+  0px 0px 6px rgba(79, 113, 227, 0.6),
+  0px 0px 20px rgba(79, 113, 227, 0.6);
+}
+
+.music-player.play .img-container img {
+  box-shadow:
+  0px 0px 3.2px rgba(79, 113, 227, 0.6),
+  0px 0px 6px rgba(79, 113, 227, 0.6),
+  0px 0px 20px rgba(79, 113, 227, 0.6);
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.action-btn {
+  background-color: white;
+  border: 0;
+  color: #dfdbdf;
+  font: 20px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 0 20px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+.action-btn-big {
+  color: #cdc2d0;
+  font-size: 30px;
+}
+
+.action-btn:hover {
+  color: #6f98e6;
+}
+
+.action-btn:focus {
+  outline: 0;
+}
+
+.music-info {
+  text-align: center;
+  padding: 10px 10px;
+  width: 100%;
+  background-color: rgba(198, 198, 198, 0.5);
+  border-radius: 15px 15px 15px 15px;
+  -webkit-border-radius: 15px 15px 15px 15px;
+  -moz-border-radius: 15px 15px 15px 15px;
+  -ms-border-radius: 15px 15px 15px 15px;
+  -o-border-radius: 15px 15px 15px 15px;
+  opacity: .7;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+
+.music-container.play .music-info {
+  opacity: 1;
+  background-color: rgba(132, 172, 203, 0.5)
+}
+
+.music-info h4 {
+  margin: 0;
+}
+
+.progress-container {
+  background: white;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0;
+  height: 4px;
+  width: 100%;
+}
+
+.progress {
+  background-color: #6f98e6;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  height: 100%;
+  width: 0%;
+  transition: width 0.1s linear;
+  -webkit-transition: width 0.1s linear;
+  -moz-transition: width 0.1s linear;
+  -ms-transition: width 0.1s linear;
+  -o-transition: width 0.1s linear;
+}
+
+.offcanvas {
+	background-color: var(--main-color);
+}
+
+.theme-controller {
+  margin-bottom: 50px;
+}
+
+.music-controller {
+  margin-bottom: 50px;
+}
+
+.slider-cont {
+  padding: 15px;
+  background-color: white;
+  border-radius: 5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -ms-border-radius: 5px 5px 5px 5px;
+  -o-border-radius: 5px 5px 5px 5px;
+  display: flex;
+  align-items: center;
+}
+
+.slider {
+  position: relative;
+  width: 200px;
+  height: 20px;
+}
+
+.slider input {
+  position: absolute;
+  left: -6px;
+  top: 0;
+  width: 212px;
+  height: 20px;
+  -webkit-appearance: none;
+  background-color: transparent;
+  z-index: 99;
+}
+
+.slider input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  cursor: pointer;
+  border: 2px solid rgba(132, 172, 203, 0.5);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.slider progress {
+  width: 200px;
+  height: 20px;
+  -webkit-appearance: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  overflow: hidden;
+}
+
+.slider progress::-webkit-progress-bar {
+  background-color: rgb(234, 234, 234);
+}
+
+.slider progress::-webkit-progress-value {
+  background-color: rgb(201, 21, 21);
+}
+
+.sliderValue {
+  font-family: sans-serif;
+  width: 28px;
+  height: 20px;
+  margin: auto;
+  text-align: center;
+}
+
+
+.authors {
+  text-align: center;
+  background-color: var(--footer-color);
+  color: white
+}
+
+.authors li{
+  text-decoration: none;
+  list-style: none;
+}
+
+.intro-content {
+  margin: 80px;
+  border: solid 10px;
+  border-color: var(--main-color);
+  padding-top: 400px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 400px;
+  background-image: url(/OG-Pokemon-Cards/public/assets/img/PokemonBG.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+
+.inner-content {
+  color: white;
+  background-color: rgba(135, 135, 135, 0.843);
+}
