@@ -74,3 +74,4 @@ router.delete('/favorite', authMiddleware, async (req, res) => {
 })
 
 module.exports = router
+
