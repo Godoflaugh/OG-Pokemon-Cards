@@ -4,10 +4,10 @@ const Op = Sequelize.Op;
 
 const { User, Pokemon } = require('../../models')
 
-async function authMiddleware (req, res, next) {
+async function authMiddleware(req, res, next) {
     if (req.session.userId) next()
     else {
-        res.status(400).json({ error: "Please log in to continue."})
+        res.status(400).json({ error: "Please log in to continue." })
     }
 }
 
@@ -17,15 +17,21 @@ router.get('/search', authMiddleware, async (req, res) => {
 
     const foundPokemons = await Pokemon.findAll({
         where: {
-            ...(name) && { name: {
-                [Op.like]: `%${name}%`
-            }},
-            ...(type) && { type: {
-                [Op.like]: `%${type}%`
-            }},
-            ...(summary) && { summary: {
-                [Op.like]: `%${summary}%`
-            }},
+            ...(name) && {
+                name: {
+                    [Op.like]: `%${name}%`
+                }
+            },
+            ...(type) && {
+                type: {
+                    [Op.like]: `%${type}%`
+                }
+            },
+            ...(summary) && {
+                summary: {
+                    [Op.like]: `%${summary}%`
+                }
+            },
         }
     })
 
@@ -72,6 +78,27 @@ router.delete('/favorite', authMiddleware, async (req, res) => {
     currUser.removePokemon(pokemon)
 
     res.status(200).json({ success: "true" })
+})
+
+
+// Test Json for data retrieval
+router.get('/test', (req, res) => {
+    Pokemon.findAll({
+        attributes: [
+            'id',
+            'name',
+            'image_url',
+            'type',
+            'weakness',
+            'Health',
+            'summary',
+        ]
+    })
+        .then(pokemondata => res.json(pokemondata))
+        .catch(err => {
+            console.log(err)
+            res.status(500).json(err)
+        })
 })
 
 module.exports = router

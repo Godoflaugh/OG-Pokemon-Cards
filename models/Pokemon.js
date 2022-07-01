@@ -27,7 +27,7 @@ Pokemon.init(
       type: DataTypes.STRING(50),
       allowNull: false,
     },
-    HP: {
+    Health: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },

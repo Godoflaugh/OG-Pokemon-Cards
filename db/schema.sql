@@ -9,17 +9,17 @@ name VARCHAR(50) NOT NULL,
 image_url VARCHAR (255) NOT NULL,
 type VARCHAR (30) NOT NULL,
 weakness VARCHAR (50) NOT NULL,
-HP int NOT NULL,
+Health int NOT NULL,
 summary VARCHAR (255) NOT NULL
 );
 
 
 
-INSERT INTO pokemon_gen1 (ID, name, image_url, type, weakness, HP, summary)
+INSERT INTO pokemon (ID, name, image_url, type, weakness, Health, summary)
 VALUES (001, "Bulbasaur", "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png", "Grass", "Fire, Ice, Flying, and Psychic", 45, "A strange seed was planted on its back at birth. The plant sprouts and grows with this pokemon"),
 (002, "Ivysaur", "https://assets.pokemon.com/assets/cms2/img/pokedex/full/002.png", "Grass", "Fire, Ice, Flying, and Psychic", 60, "When the bulb on its back grows large, it appears to lose the ability to stand on it's hind legs."),
 (003, "Venusaur", "https://assets.pokemon.com/assets/cms2/img/pokedex/full/003.png", "Grass", "Fire, Ice, Flying, and Psychic", 80, "It's plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight."),
-(004, "Charmander", "https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png", "Fire", "Water, Ground, Rock", 39 "It has a preference for hot things. When it rains, steam is said to spout from the tip of it's tail."),
+(004, "Charmander", "https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png", "Fire", "Water, Ground, Rock", 39, "It has a preference for hot things. When it rains, steam is said to spout from the tip of it's tail."),
 (005, "Charmeleon", "https://assets.pokemon.com/assets/cms2/img/pokedex/full/005.png", "Fire", "Water, Ground, Rock", 58, "It has a barbaric nature. In battle, it whips it's fiery tail around and slashes away with sharp claws."),
 (006, "Charizard", "https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png", "Fire", "Water, Ground, Rock", 78, "It spits fire that is hot enough to melt boulders. It may cause forest fires by blowing flames."),
 (007, "Squirtle", "https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png", "Water", "Electric, Grass", 44, "When it retracts it's long neck into it's shell, it squirts out water with vigorous force."),

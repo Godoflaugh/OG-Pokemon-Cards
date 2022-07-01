@@ -1,5 +1,5 @@
 
-INSERT INTO pokemon_gen1 (ID, name, image_url, type, weakness, HP, summary)
+INSERT INTO pokemon (ID, name, image_url, type, weakness, Health, summary)
 VALUES (001, "Bulbasaur", "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png", "Grass", "Fire, Ice, Flying, and Psychic", 45, "A strange seed was planted on its back at birth. The plant sprouts and grows with this pokemon"),
 (002, "Ivysaur", "https://assets.pokemon.com/assets/cms2/img/pokedex/full/002.png", "Grass", "Fire, Ice, Flying, and Psychic", 60, "When the bulb on its back grows large, it appears to lose the ability to stand on it's hind legs."),
 (003, "Venusaur", "https://assets.pokemon.com/assets/cms2/img/pokedex/full/003.png", "Grass", "Fire, Ice, Flying, and Psychic", 80, "It's plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight."),
