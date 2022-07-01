@@ -4,9 +4,12 @@ const bcrypt = require('bcrypt')
 const User = require('../../models/User')
 
 router.get('/', async (req, res) => {
-  console.log(req.session.userId);
-
-  res.status(200).json({currUserId: req.session.userId})
+  req.session.reload((err) => {
+    if (err) console.log("err" + err)
+    console.log(req.headers)
+    console.log(req.session)
+    res.status(200).json({currUserId: req.session.userId})
+  })
 })
 
 router.post('/login', async (req, res, next) => {
@@ -27,15 +30,16 @@ router.post('/login', async (req, res, next) => {
   
       // store user information in session, typically a user id
       req.session.userId = existingUser.id 
+      console.log(req.session)
   
       // save the session before redirection to ensure page
       // load does not happen before session is saved
       req.session.save((err) => {
         if (err) return next(err)
-        res.redirect('/')
+        // res.redirect('/')
+        res.status(200).json({ success: true })
       })
     })
-    res.status(200).json({ success: true})
   } else {
     res.status(400).json({ error: "Password is not correct"})
   }
@@ -60,13 +64,25 @@ router.post('/signup', async (req, res, next) => {
       // load does not happen before session is saved
       req.session.save((err) => {
         if (err) return next(err)
-        res.redirect('/')
+        // res.redirect('/')
+        res.status(200).json({ success: "true" })
       })
     })
 
-    res.status(200).json({success: "true"})
   } catch (err) {
     res.status(400).json(err)
+  }
+})
+
+router.get('/logout', async (req, res, next) => {
+  if (req.session.userId) {
+    req.session.destroy((err) => {
+      if (err) return next(err)
+
+      res.status(200).json({ success: "true" })
+    })
+  } else {
+    res.status(400).json({ error: "This user is not logged in."})
   }
 })
 

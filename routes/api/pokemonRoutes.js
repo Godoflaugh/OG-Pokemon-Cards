@@ -1,25 +1,77 @@
 const router = require('express').Router()
-const { Pokemon } = require('../../models')
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 
-// This is the /api/pokemon end point
+const { User, Pokemon } = require('../../models')
 
-//Get and post methods for pokemon.
-router.get('/', (req, res) => {
-  //This is the base route to grab all pokemon data
-  Pokemon.findAll({
-    attributes: [
-      'id',
-      'name',
-      'image_url',
-      'type',
-      'weakness',
-      'HP',
-      'summary',
-    ]
-  })
-    .then(data => res.json(data))
-    .catch(err => {
-      console.log(err)
-      res.status(500).json(err)
+async function authMiddleware (req, res, next) {
+    if (req.session.userId) next()
+    else {
+        res.status(400).json({ error: "Please log in to continue."})
+    }
+}
+
+router.get('/search', authMiddleware, async (req, res) => {
+    const { name, type, summary } = req.query
+
+    const foundPokemons = await Pokemon.findAll({
+        where: {
+            ...(name) && { name: {
+                [Op.like]: `%${name}%`
+            }},
+            ...(type) && { type: {
+                [Op.like]: `%${type}%`
+            }},
+            ...(summary) && { summary: {
+                [Op.like]: `%${summary}%`
+            }},
+        }
     })
+
+    res.status(200).json(foundPokemons)
 })
+
+// Get all favorite pokemons
+router.get('/favorite', authMiddleware, async (req, res) => {
+    const currUser = await User.findOne({
+        where: { id: req.session.userId },
+        include: [Pokemon]
+    })
+
+    res.status(200).json({ id: currUser.id, pokemons: currUser.pokemons })
+})
+
+// Set a new favorite pokemon
+router.post('/favorite', authMiddleware, async (req, res) => {
+    // Set relationship
+    const currUser = await User.findOne({
+        where: { id: req.session.userId },
+        include: [Pokemon]
+    })
+
+    const { pokemonId } = req.body
+    const pokemon = await Pokemon.findByPk(pokemonId)
+
+    currUser.addPokemon(pokemon)
+
+    res.status(200).json({ success: "true" })
+})
+
+// Set a new favorite pokemon
+router.delete('/favorite', authMiddleware, async (req, res) => {
+    // Set relationship
+    const currUser = await User.findOne({
+        where: { id: req.session.userId },
+        include: [Pokemon]
+    })
+
+    const { pokemonId } = req.body
+    const pokemon = await Pokemon.findByPk(pokemonId)
+
+    currUser.removePokemon(pokemon)
+
+    res.status(200).json({ success: "true" })
+})
+
+module.exports = router
+

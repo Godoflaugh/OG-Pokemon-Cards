@@ -3,7 +3,7 @@ CREATE DATABASE pokemon_db;
 
 
 USE pokemon_db;
-CREATE TABLE pokemon_gen1 (
+CREATE TABLE pokemon (
 ID int NOT NULL PRIMARY KEY,
 name VARCHAR(50) NOT NULL,
 image_url VARCHAR (255) NOT NULL,
@@ -12,6 +12,7 @@ weakness VARCHAR (50) NOT NULL,
 HP int NOT NULL,
 summary VARCHAR (255) NOT NULL
 );
+
 
 
 INSERT INTO pokemon_gen1 (ID, name, image_url, type, weakness, HP, summary)
@@ -40,3 +41,4 @@ VALUES (001, "Bulbasaur", "https://assets.pokemon.com/assets/cms2/img/pokedex/fu
 (023, "Ekans", "https://img.pokemondb.net/artwork/ekans.jpg", "Poison", "Ground, Psychic", 35, "Moves silently and stealthily. Eats the eggs of birds, such as PIDGEY and SPEAROW, whole."),
 (024, "Arbok", "https://img.pokemondb.net/artwork/arbok.jpg", "Poison", "Ground, Psychic", 60, "It is rumored that the ferocious warning markings on its belly differ from area to area."),
 (025, "Pikachu", "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png", "Electric", "Ground", 35, "Pikachu that can geerate powerful electricity have cheek sacs that are extra soft and super stretchy.");
+
