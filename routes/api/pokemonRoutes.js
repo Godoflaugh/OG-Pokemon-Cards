@@ -82,7 +82,7 @@ router.delete('/favorite', authMiddleware, async (req, res) => {
 
 
 // Test Json for data retrieval
-router.get('/test', (req, res) => {
+router.get('/all', (req, res) => {
     Pokemon.findAll({
         attributes: [
             'id',
@@ -95,6 +95,47 @@ router.get('/test', (req, res) => {
         ]
     })
         .then(pokemondata => res.json(pokemondata))
+        .catch(err => {
+            console.log(err)
+            res.status(500).json(err)
+        })
+})
+
+// Search by pokemon name
+router.get('/:name', (req, res) => {
+    Pokemon.findOne({
+        where: {
+            name: req.params.name
+        },
+        attributes: [
+            'id',
+            'name',
+            'image_url',
+            'type',
+            'weakness',
+            'Health',
+            'summary',
+        ]
+    })
+        .then(data => res.json(data))
+        .catch(err => {
+            console.log("Try again, name not found")
+            res.status(500).json(err)
+        })
+})
+
+router.post('/add', (req, res) => {
+    //Create a new pokemon entry into the database
+    Pokemon.create({
+        id: req.body.id,
+        name: req.body.name,
+        image_url: req.body.image_url,
+        type: req.body.type,
+        weakness: req.body.weakness,
+        Health: req.body.Health,
+        summary: req.body.summary,
+    })
+        .then(data => res.json(data))
         .catch(err => {
             console.log(err)
             res.status(500).json(err)
