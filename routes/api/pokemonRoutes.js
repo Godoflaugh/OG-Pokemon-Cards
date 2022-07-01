@@ -11,6 +11,7 @@ async function authMiddleware (req, res, next) {
     }
 }
 
+//Find all pokemon
 router.get('/search', authMiddleware, async (req, res) => {
     const { name, type, summary } = req.query
 

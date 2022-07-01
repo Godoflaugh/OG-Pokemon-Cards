@@ -3,7 +3,7 @@ const userRoutes = require('./userRoutes')
 const pokemonRoutes = require('./pokemonRoutes')
 
 
-// router.use('/pokemon', pokemon)
+
 router.use('/users', userRoutes)
 router.use('/pokemons', pokemonRoutes)
 
