@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="./assets/css/style.css"/>
+  <link rel="stylesheet" href="./assets/css/style.css" />
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
   <link rel="manifest" href="./assets/favicon/site.webmanifest">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
   <title>PokéStats</title>
 </head>
 
@@ -21,48 +21,60 @@
   <nav id="navbarColor" class="navbar mb-5">
     <div class="container-fluid">
       <h1 class="navbar-brand">PokéStats</h1>
-      <img id="pokeball" src="./assets/img/logo.gif" alt="pokeball">
+      <a href="./index.html">
+        <img id="pokeball" src="./assets/img/logo.gif" alt="pokeball">
+      </a>
       <div class="d-flex">
         <button id="navbutt" class="btn btn-primary m-1" type="submit">Login</button>
-        <button id="navbutt" class="btn btn-danger m-1" type="submit">Favorites</button>
+        <a id="fav" class="btn btn-danger m-1" href="./favorites.html">Favorites</a>
         <button id="navbutt" class="btn btn-secondary m-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="sidebar">Settings</button>
       </div>
     </div>
   </nav>
 <!-- ########### NAV BAR END ########### -->
 <!-- ----------------------------------- -->
-<!-- ######## MUSIC PLAYER START ####### -->
-  <section class="music-box">
-    <section class="display-1 text-center">
-      <p>Music Player</p>
-    </section>
-    <section class="music-player">
-      <div class="img-container">
-        <img src="./assets/img/Littleroot Town.gif" alt="music-cover" id="cover"/>
-      </div>
-      <div class="music-container">
-        <div class="music-info">
-          <h4 id="title">Littleroot</h4>
-          <div class="progress-container">
-            <div class="progress"></div>
+<!-- ######## WELCOME START ####### -->
+  <section class="content-box">
+    <section class="display-1 text-center"><p>Welcome!</p></section>
+    <section class="welcome-content">
+      <section class="about-content">
+        <h1 class="display-4">About</h1>
+          <p class="lead">PokéStats is an online library of pokemon cards that you can use to see information about Pokémon!</p>
+          <hr class="my-3">
+          <h2>7.1.23 Patch Notes</h2>
+          <p>Includes updated Pokémon card designs, filter options, music controls, and more!</p>
+          <p class="lead">
+            <a class="btn btn-warning btn-lg" href="#" role="button">Updates</a>
+          </p>
+      </section>
+      <section><img class="vert-line" src="./assets/img/vertical-line.png" alt="line"></section>
+      <section class="music-player">
+        <h1 class="display-4">Music</h1>
+        <div class="img-container"><img src="./assets/img/Littleroot Town.gif" alt="music-cover" id="cover"/></div>
+        <div class="music-container">
+          <div class="music-info">
+            <h4 id="title">Littleroot</h4>
+            <div class="progress-container">
+              <div class="progress"></div>
+            </div>
+          </div>
+          <audio src="./assets/music/littleroot-town.mp3" id="audio"></audio>
+          <div class="navigation">
+            <button id="prev" class="action-btn">
+              <i class="fas fa-backward"></i>
+            </button>
+            <button id="play" class="action-btn action-btn-big">
+              <i class="fas fa-play"></i>
+            </button>
+            <button id="next" class="action-btn">
+              <i class="fas fa-forward"></i>
+            </button>
           </div>
         </div>
-        <audio src="./assets/music/littleroot-town.mp3" id="audio"></audio>
-        <div class="navigation">
-          <button id="prev" class="action-btn">
-            <i class="fas fa-backward"></i>
-          </button>
-          <button id="play" class="action-btn action-btn-big">
-            <i class="fas fa-play"></i>
-          </button>
-          <button id="next" class="action-btn">
-            <i class="fas fa-forward"></i>
-          </button>
-        </div>
-      </div>
+      </section>
     </section>
   </section>
-<!-- ######## MUSIC PLAYER END ######### -->
+<!-- ######## WELCOME END ######### -->
 <!-- ----------------------------------- -->
 <!-- ########### OFFCANVAS START ####### -->
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="sidebar-label">
@@ -73,8 +85,8 @@
   <div class="offcanvas-body mx-auto">
     <section class="theme-controller">
       <h1 class="display-4 mt-2 mx-auto">Theme</h1>
-      <button id="navbutt" type="button" class="btn btn-light">Light</button>
-      <button id="navbutt" type="button" class="btn btn-dark">Dark</button>
+      <button id="light" type="button" class="btn btn-light">Light</button>
+      <button id="dark" type="button" class="btn btn-dark">Dark</button>
     </section>
     <section class="music-controller">
       <h1 class="display-4 mt-2">Music Controls</h1>
@@ -111,34 +123,81 @@
 <!-- ########### OFFCANVAS END ######### -->
 <!-- ----------------------------------- -->
 <!-- ######## MAIN CONTENT START ####### -->
-<section class="intro-content">
-  <div class=" inner-content jumbotron" align="center">
-    <h1 class="display-4">Hello, world!</h1>
-    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-    <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-    <p class="lead">
-      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-    </p>
+<section class="content-box">
+  <section class="display-1"><p>Filter</p></section>
+  <section class="filter-box">
+    <!-- ###### SEARCH BAR - NAME ###### -->
+  <div class="search-options">
+    <form class="test">
+      <input class="form-control mr-sm-2 text-dark border-dark" type="search" placeholder="Pokemon Name" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0 bg-white" type="submit"><i class="bi bi-search"></i></button>
+    </form>
   </div>
-</section>
-
-<section class="row">
-  <div class="col-3 offset-1">
-      <input type="text" placeholder="Pokemon Name">
+        <!-- TYPE -->
+  <div class="type-options">
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle bg-white text-dark" type="button" id="dropdownMenuButton"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Pokemon Type
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Bug</a>
+        <a class="dropdown-item" href="#">Dragon</a>
+        <a class="dropdown-item" href="#">Electric</a>
+        <a class="dropdown-item" href="#">Fighting</a>
+        <a class="dropdown-item" href="#">Fire</a>
+        <a class="dropdown-item" href="#">Flying</a>
+        <a class="dropdown-item" href="#">Ghost</a>
+        <a class="dropdown-item" href="#">Grass</a>
+        <a class="dropdown-item" href="#">Ground</a>
+        <a class="dropdown-item" href="#">Ice</a>
+        <a class="dropdown-item" href="#">Normal</a>
+        <a class="dropdown-item" href="#">Poison</a>
+        <a class="dropdown-item" href="#">Psychic</a>
+        <a class="dropdown-item" href="#">Rock</a>
+        <a class="dropdown-item" href="#">Water</a>
+      </div>
+    </div>
   </div>
-  <div class="col-3 offset-1">
-      <input type="text" placeholder="Pokemon Element">
+  <!-- ###### DROP DOWN - WEAKNESSES ###### -->
+  <div class="weakness-options">
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle bg-white text-dark" type="button" id="dropdownMenuButton"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Pokemon Weakness
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Bug</a>
+        <a class="dropdown-item" href="#">Dragon</a>
+        <a class="dropdown-item" href="#">Electric</a>
+        <a class="dropdown-item" href="#">Fighting</a>
+        <a class="dropdown-item" href="#">Fire</a>
+        <a class="dropdown-item" href="#">Flying</a>
+        <a class="dropdown-item" href="#">Ghost</a>
+        <a class="dropdown-item" href="#">Grass</a>
+        <a class="dropdown-item" href="#">Ground</a>
+        <a class="dropdown-item" href="#">Ice</a>
+        <a class="dropdown-item" href="#">Normal</a>
+        <a class="dropdown-item" href="#">Poison</a>
+        <a class="dropdown-item" href="#">Psychic</a>
+        <a class="dropdown-item" href="#">Rock</a>
+        <a class="dropdown-item" href="#">Water</a>
+      </div>
+    </div>
   </div>
-  <div class="col-3 offset-1">
-      <input type="text" placeholder="Pokemon Type">
-  </div>
+  </section>
 </section>
 <!-- ########### MAIN CONTENT END ###### -->
+<!-- ----------------------------------- -->
+<!-- ##### OUTPUT AREA START #####- UNDER CONSTRUCTION -->
+<!-- ##### OUTPUT AREA END #####- UNDER CONSTRUCTION -->
 <!-- ----------------------------------- -->
 <!-- ########### SCRIPT START ########## -->
 <script src="./assets/js/music.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <!-- ########### SCRIPT END ############ -->
 </body>
 </html>
