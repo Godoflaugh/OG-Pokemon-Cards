@@ -9,8 +9,9 @@ const progressContainer = document.querySelector('.progress-container')
 const title = document.querySelector('#title')
 const cover = document.querySelector('#cover')
 const ballClicker = document.querySelector('#catcher')
-const ball = document.querySelector('#pokeball')
 const slider = document.querySelector("input")
+const lightBtn = document.querySelector('#light')
+const darkBtn = document.querySelector('#dark')
 
 //Song Titles
 const songs = ['Azalea Town', 'Lavender Town', 'Friendly Shop', 'Littleroot Town']
@@ -81,6 +82,9 @@ function setProgress(e) {
     audio.currentTime = (clickX / width) * duration
 }
 
+function lightMode(e) {
+}
+
 //VOLUME SLIDER
 slider.oninput = function () {
     progressBar = document.querySelector("progress")
@@ -101,12 +105,10 @@ playBtn.addEventListener('click', () => {
     }
 })
 
-
-
-
 prevBtn.addEventListener('click', prevSong)
 nextBtn.addEventListener('click', nextSong)
 audio.addEventListener('timeupdate', updateProgress)
 progressContainer.addEventListener('click', setProgress)
 audio.addEventListener('ended', nextSong)
-ballClicker.addEventListener('click', pokeballOpener)
+lightBtn.addEventListener('click', lightMode)
+darkBtn.addEventListener('click', darkMode)

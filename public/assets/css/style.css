@@ -1,6 +1,7 @@
-:root {
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:wght@100&family=Source+Sans+Pro&display=swap');
 
-  --main-color: #a7ccff;
+:root {
+  --main-color: #fbffa7;
   --footer-color: #474747;
 }
 
@@ -10,7 +11,11 @@
 }
 
 body {
-  background-color:rgb(247, 247, 247)
+  background-color:rgb(255, 255, 255);
+  background-image: url(../img/PokemonBG.jpeg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat, repeat;
 }
 
 .navbar {
@@ -21,7 +26,12 @@ body {
 }
 
 #navbutt {
-  font-size: 20px !important;
+  font-size: 25px !important;
+}
+
+#fav {
+  font-weight: 400 !important;
+  font-size: 25px;
 }
 
 #pokeball {
@@ -34,9 +44,10 @@ body {
   color:rgb(75, 75, 75);
 }
 
-.music-box {
+.content-box {
+  opacity: 1;
   background-color: rgb(242, 242, 242);
-  margin: 0px 100px;
+  margin: 150px 100px;
   padding: 50px 50px;
   box-shadow:
   0px 0px 1.2px rgba(0, 0, 0, 0.073),
@@ -45,23 +56,25 @@ body {
 }
 
 .music-player {
+  padding: 20px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin: 0px 100px;
 }
 
 .music-container {
-  width: 50%;
-  display: flex;
+  margin: 20px 0px;
   padding: 20px 60px;
-  margin: 100px 100px;
-  z-index: 10;
+  display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 10;
+  width: 300px;
   justify-content: center;
   background-color: white;
   border-radius: 15px;
-  border: solid 6px var(--main-color);
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   -ms-border-radius: 15px;
@@ -71,31 +84,31 @@ body {
   -moz-transition: 1s;
   -ms-transition: 1s;
   -o-transition: 1s;
+  box-shadow:
+  0px 0px 1.2px rgba(0, 0, 0, 0.073),
+  0px 0px 4px rgba(0, 0, 0, 0.107),
+  0px 0px 18px rgba(0, 0, 0, 0.18);
 }
 
 .img-container {
-  display: flex;
-  align-items: center;
-  position: relative;
-  width: 300px;
+  margin: auto;
+  width: 230px;
 }
 
 .img-container img {
   width: inherit;
-  height: 300px;
-  border-radius: 80%;
-  -webkit-border-radius: 80%;
-  -moz-border-radius: 80%;
-  -ms-border-radius: 80%;
-  -o-border-radius: 80%;
+  height: 230px;
   object-fit: cover;
-  bottom: 0;
-  left: 0;
   transition: 1s;
   -webkit-transition: 1s;
   -moz-transition: 1s;
   -ms-transition: 1s;
   -o-transition: 1s;
+  border-radius: 15px 50px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 15px 50px;
+  -ms-border-radius: 15px 50px;
+  -o-border-radius: 15px 50px;
 }
 
 .music-container.play {
@@ -318,3 +331,152 @@ body {
   color: white;
   background-color: rgba(135, 135, 135, 0.843);
 }
+
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: inset 0 0 10px #000000;
+  padding: 30px;
+}
+
+.card {
+  border: solid rgb(238, 238, 21) 5px;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  padding: 10px;
+  width: 350px;
+  height: 550px;
+  background-color: rgb(192, 219, 255);
+  box-shadow:
+  0px 0px 0.3px rgba(0, 0, 0, 0.046),
+  0px 0px 0.8px rgba(0, 0, 0, 0.066),
+  0px 0px 1.3px rgba(0, 0, 0, 0.082),
+  0px 0px 2.1px rgba(0, 0, 0, 0.095),
+  0px 0px 3.3px rgba(0, 0, 0, 0.108),
+  0px 0px 5.1px rgba(0, 0, 0, 0.124),
+  0px 0px 8.5px rgba(0, 0, 0, 0.144),
+  0px 0px 17px rgba(0, 0, 0, 0.19)
+;
+}
+
+.card-img {
+  display: flex;
+  justify-content: center;
+}
+
+.card img {
+  border-width: 5px;
+  border-style: solid;
+  border-image: linear-gradient(to right, rgb(136, 110, 6), rgb(218, 193, 1)) 1;
+  width: auto;
+  height: 250px;
+}
+
+.card-info-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.card-info-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#name h4{
+  font-weight: 400;
+  font-family: 'Permanent Marker', cursive;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: black;
+}
+
+#health {
+  color: rgb(208, 0, 0);
+}
+
+.card-info {
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: rgba(254, 242, 130, 0.842);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.card-info h3{
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.card-info h4{
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.filter-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.search-options {
+  width: 400px;
+  margin: 10px;
+}
+
+.type-options,
+.weakness-options {
+  margin: 10px;
+}
+
+.test {
+  display: flex;
+  flex-direction: row;
+}
+
+.test button{
+  margin: 5px;
+}
+
+.welcome-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.vert-line {
+  opacity: .5;
+}
+
+@media only screen and (max-width: 2180px) {
+  .vert-line {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  #pokeball {
+    display: none;
+  }
+}
+
