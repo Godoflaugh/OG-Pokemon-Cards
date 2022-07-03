@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">  
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,17 +8,20 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
   <link rel="stylesheet" href="./assets/css/style.css" />
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
   <link rel="manifest" href="./assets/favicon/site.webmanifest">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
   <title>PokéStats</title>
 </head>
 
 <body>
-<!-- ########### NAV BAR START ######### -->
+  <!-- ########### NAV BAR START ######### -->
   <nav id="navbarColor" class="navbar mb-5">
     <div class="container-fluid">
       <h1 class="navbar-brand">PokéStats</h1>
@@ -26,6 +30,7 @@
       </a>
       <div class="d-flex">
         <button id="navbutt" class="btn btn-primary m-1" type="submit">Login</button>
+
         <a id="fav" class="btn btn-danger m-1" href="./favorites.html">Favorites</a>
         <button id="navbutt" class="btn btn-secondary m-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="sidebar">Settings</button>
       </div>
@@ -69,6 +74,7 @@
             <button id="next" class="action-btn">
               <i class="fas fa-forward"></i>
             </button>
+
           </div>
         </div>
       </section>
@@ -95,29 +101,79 @@
         <div class="slider">
           <input id="volume-control" type="range" min="0" max="100" value="50">
           <progress min="0" max="100" value="50"></progress>
+
         </div>
-        <div class="sliderValue">50</div>
       </div>
-      <div class="dropdown mt-3">
-        <button id="navbutt" class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">Song Selection</button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <li><a class="dropdown-item" href="#">Littleroot Town</a></li>
-          <li><a class="dropdown-item" href="#">Azalea Town</a></li>
-          <li><a class="dropdown-item" href="#">Lavender Town</a></li>
-          <li><a class="dropdown-item" href="#">Friendly Shop</a></li>
-          <li><a class="dropdown-item" href="#">Random Mix</a></li>
-        </ul>
-      </div>
-    </section>
-  </div>
-  <div class="authors offcanvas-foote mx-auto">
-    <h4 class="display-4">Created by</h4>
-    <div class="d-flex">
-      <p>Dante Stargiotti</p>
-      <p>Dante Stargiotti</p>
-      <p>Dante Stargiotti</p>
-      <p>Dante Stargiotti</p>
     </div>
+    <!-- 2nd ROW -->
+    <div class="row">
+      <!-- SEARCH BAR - NAME -->
+      <div class="col-3 offset-1">
+        <form class="form-inline">
+          <input class="form-control mr-sm-2 text-dark border-dark" type="search" placeholder="Pokemon Name"
+            aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0 bg-white" type="submit"><i
+              class="bi bi-search"></i></button>
+        </form>
+      </div>
+      <!--DROP DOWN - TYPE  -->
+      <div class="col-3">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle bg-white text-dark" type="button" id="dropdownMenuButton"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Pokemon Type
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Bug</a>
+            <a class="dropdown-item" href="#">Dragon</a>
+            <a class="dropdown-item" href="#">Electric</a>
+            <a class="dropdown-item" href="#">Fighting</a>
+            <a class="dropdown-item" href="#">Fire</a>
+            <a class="dropdown-item" href="#">Flying</a>
+            <a class="dropdown-item" href="#">Ghost</a>
+            <a class="dropdown-item" href="#">Grass</a>
+            <a class="dropdown-item" href="#">Ground</a>
+            <a class="dropdown-item" href="#">Ice</a>
+            <a class="dropdown-item" href="#">Normal</a>
+            <a class="dropdown-item" href="#">Poison</a>
+            <a class="dropdown-item" href="#">Psychic</a>
+            <a class="dropdown-item" href="#">Rock</a>
+            <a class="dropdown-item" href="#">Water</a>
+          </div>
+        </div>
+      </div>
+      <!-- DROP DOWN - WEAKNESSES -->
+      <div class="col-3">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle bg-white text-dark" type="button" id="dropdownMenuButton"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Pokemon Weakness
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Bug</a>
+            <a class="dropdown-item" href="#">Dragon</a>
+            <a class="dropdown-item" href="#">Electric</a>
+            <a class="dropdown-item" href="#">Fighting</a>
+            <a class="dropdown-item" href="#">Fire</a>
+            <a class="dropdown-item" href="#">Flying</a>
+            <a class="dropdown-item" href="#">Ghost</a>
+            <a class="dropdown-item" href="#">Grass</a>
+            <a class="dropdown-item" href="#">Ground</a>
+            <a class="dropdown-item" href="#">Ice</a>
+            <a class="dropdown-item" href="#">Normal</a>
+            <a class="dropdown-item" href="#">Poison</a>
+            <a class="dropdown-item" href="#">Psychic</a>
+            <a class="dropdown-item" href="#">Rock</a>
+            <a class="dropdown-item" href="#">Water</a>
+          </div>
+        </div>
+      </div>
+      <!-- OUTPUT AREA - UNDER CONSTRUCTION -->
+      <div>
+  
+      </div>
+    </div>
+  
   </div>
 </div>
 <!-- ########### OFFCANVAS END ######### -->
@@ -199,5 +255,7 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <!-- ########### SCRIPT END ############ -->
+
 </body>
+
 </html>
