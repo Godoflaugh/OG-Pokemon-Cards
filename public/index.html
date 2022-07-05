@@ -17,7 +17,7 @@
 </head>
 
 <body>
-<!-- ########### NAV BAR START ######### -->
+  <!-- ########### NAV BAR START ######### -->
   <nav id="navbarColor" class="navbar mb-5">
     <div class="container-fluid">
       <h1 class="navbar-brand">PokéStats</h1>
@@ -31,10 +31,10 @@
       </div>
     </div>
   </nav>
-<!-- ########### NAV BAR END ########### -->
-<!-- ----------------------------------- -->
-<!-- ######## WELCOME START ####### -->
-  <section class="content-box">
+  <!-- ########### NAV BAR END ########### -->
+  <!-- ----------------------------------- -->
+  <!-- ######## WELCOME START ####### -->
+  <section id="welcomeBox" class="content-box">
     <section class="display-1 text-center"><p>Welcome!</p></section>
     <section class="welcome-content">
       <section class="about-content">
@@ -47,7 +47,7 @@
             <a class="btn btn-warning btn-lg" href="#" role="button">Updates</a>
           </p>
       </section>
-      <section><img class="vert-line" src="./assets/img/vertical-line.png" alt="line"></section>
+      <section><img id="line" class="vert-line" src="./assets/img/vertical-line.png" alt="line"></section>
       <section class="music-player">
         <h1 class="display-4">Music</h1>
         <div class="img-container"><img src="./assets/img/Littleroot Town.gif" alt="music-cover" id="cover"/></div>
@@ -74,130 +74,130 @@
       </section>
     </section>
   </section>
-<!-- ######## WELCOME END ######### -->
-<!-- ----------------------------------- -->
-<!-- ########### OFFCANVAS START ####### -->
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="sidebar-label">
-  <div class="offcanvas-header">
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    <h3 class="offcanvas-title" id="offcanvasExampleLabel">Settings</h3>
-  </div>
-  <div class="offcanvas-body mx-auto">
-    <section class="theme-controller">
-      <h1 class="display-4 mt-2 mx-auto">Theme</h1>
-      <button id="light" type="button" class="btn btn-light">Light</button>
-      <button id="dark" type="button" class="btn btn-dark">Dark</button>
-    </section>
-    <section class="music-controller">
-      <h1 class="display-4 mt-2">Music Controls</h1>
-      <h4 class="mt-2">Volume</h4>
-      <div class="slider-cont">
-        <div class="slider">
-          <input id="volume-control" type="range" min="0" max="100" value="50">
-          <progress min="0" max="100" value="50"></progress>
+  <!-- ######## WELCOME END ######### -->
+  <!-- ----------------------------------- -->
+  <!-- ########### OFFCANVAS START ####### -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="sidebar-label">
+    <div class="offcanvas-header">
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      <h3 class="offcanvas-title" id="offcanvasExampleLabel">Settings</h3>
+    </div>
+    <div class="offcanvas-body mx-auto">
+      <section class="theme-controller">
+        <h1 class="display-4 mt-2 mx-auto">Theme</h1>
+        <button id="light" type="button" class="btn btn-light">Light</button>
+        <button id="dark" type="button" class="btn btn-dark">Dark</button>
+      </section>
+      <section class="music-controller">
+        <h1 class="display-4 mt-2">Music Controls</h1>
+        <h4 class="mt-2">Volume</h4>
+        <div class="slider-cont">
+          <div class="slider">
+            <input id="volume-control" type="range" min="0" max="100" value="50">
+            <progress min="0" max="100" value="50"></progress>
+          </div>
+          <div class="sliderValue">50</div>
         </div>
-        <div class="sliderValue">50</div>
+        <div class="dropdown mt-3">
+          <button id="navbutt" class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">Song Selection</button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="#">Littleroot Town</a></li>
+            <li><a class="dropdown-item" href="#">Azalea Town</a></li>
+            <li><a class="dropdown-item" href="#">Lavender Town</a></li>
+            <li><a class="dropdown-item" href="#">Friendly Shop</a></li>
+            <li><a class="dropdown-item" href="#">Random Mix</a></li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <div class="authors offcanvas-foote mx-auto">
+      <h4 class="display-4">Created by</h4>
+      <div class="d-flex">
+        <p>Dante Stargiotti</p>
+        <p>Dante Stargiotti</p>
+        <p>Dante Stargiotti</p>
+        <p>Dante Stargiotti</p>
       </div>
-      <div class="dropdown mt-3">
-        <button id="navbutt" class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">Song Selection</button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <li><a class="dropdown-item" href="#">Littleroot Town</a></li>
-          <li><a class="dropdown-item" href="#">Azalea Town</a></li>
-          <li><a class="dropdown-item" href="#">Lavender Town</a></li>
-          <li><a class="dropdown-item" href="#">Friendly Shop</a></li>
-          <li><a class="dropdown-item" href="#">Random Mix</a></li>
-        </ul>
+    </div>
+  </div>
+  <!-- ########### OFFCANVAS END ######### -->
+  <!-- ----------------------------------- -->
+  <!-- ######## MAIN CONTENT START ####### -->
+  <section id="filterBox" class="content-box">
+    <section class="display-1"><p>Filter</p></section>
+    <section class="filter-box">
+      <!-- ###### SEARCH BAR - NAME ###### -->
+    <div class="search-options">
+      <form class="test">
+        <input class="form-control mr-sm-2 text-dark border-dark" type="search" placeholder="Pokemon Name" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0 bg-white" type="submit"><i class="bi bi-search"></i></button>
+      </form>
+    </div>
+          <!-- TYPE -->
+    <div class="type-options col-3">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle bg-white text-dark" type="button" id="dropdownMenuButton"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Pokemon Type
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Bug</a>
+          <a class="dropdown-item" href="#">Dragon</a>
+          <a class="dropdown-item" href="#">Electric</a>
+          <a class="dropdown-item" href="#">Fighting</a>
+          <a class="dropdown-item" href="#">Fire</a>
+          <a class="dropdown-item" href="#">Flying</a>
+          <a class="dropdown-item" href="#">Ghost</a>
+          <a class="dropdown-item" href="#">Grass</a>
+          <a class="dropdown-item" href="#">Ground</a>
+          <a class="dropdown-item" href="#">Ice</a>
+          <a class="dropdown-item" href="#">Normal</a>
+          <a class="dropdown-item" href="#">Poison</a>
+          <a class="dropdown-item" href="#">Psychic</a>
+          <a class="dropdown-item" href="#">Rock</a>
+          <a class="dropdown-item" href="#">Water</a>
+        </div>
       </div>
+    </div>
+    <!-- ###### DROP DOWN - WEAKNESSES ###### -->
+    <div class="weakness-options col-3">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle bg-white text-dark" type="button" id="dropdownMenuButton"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Pokemon Weakness
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Bug</a>
+          <a class="dropdown-item" href="#">Dragon</a>
+          <a class="dropdown-item" href="#">Electric</a>
+          <a class="dropdown-item" href="#">Fighting</a>
+          <a class="dropdown-item" href="#">Fire</a>
+          <a class="dropdown-item" href="#">Flying</a>
+          <a class="dropdown-item" href="#">Ghost</a>
+          <a class="dropdown-item" href="#">Grass</a>
+          <a class="dropdown-item" href="#">Ground</a>
+          <a class="dropdown-item" href="#">Ice</a>
+          <a class="dropdown-item" href="#">Normal</a>
+          <a class="dropdown-item" href="#">Poison</a>
+          <a class="dropdown-item" href="#">Psychic</a>
+          <a class="dropdown-item" href="#">Rock</a>
+          <a class="dropdown-item" href="#">Water</a>
+        </div>
+      </div>
+    </div>
     </section>
-  </div>
-  <div class="authors offcanvas-foote mx-auto">
-    <h4 class="display-4">Created by</h4>
-    <div class="d-flex">
-      <p>Dante Stargiotti</p>
-      <p>Dante Stargiotti</p>
-      <p>Dante Stargiotti</p>
-      <p>Dante Stargiotti</p>
-    </div>
-  </div>
-</div>
-<!-- ########### OFFCANVAS END ######### -->
-<!-- ----------------------------------- -->
-<!-- ######## MAIN CONTENT START ####### -->
-<section class="content-box">
-  <section class="display-1"><p>Filter</p></section>
-  <section class="filter-box">
-    <!-- ###### SEARCH BAR - NAME ###### -->
-  <div class="search-options">
-    <form class="test">
-      <input class="form-control mr-sm-2 text-dark border-dark" type="search" placeholder="Pokemon Name" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0 bg-white" type="submit"><i class="bi bi-search"></i></button>
-    </form>
-  </div>
-        <!-- TYPE -->
-  <div class="type-options">
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle bg-white text-dark" type="button" id="dropdownMenuButton"
-        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Pokemon Type
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Bug</a>
-        <a class="dropdown-item" href="#">Dragon</a>
-        <a class="dropdown-item" href="#">Electric</a>
-        <a class="dropdown-item" href="#">Fighting</a>
-        <a class="dropdown-item" href="#">Fire</a>
-        <a class="dropdown-item" href="#">Flying</a>
-        <a class="dropdown-item" href="#">Ghost</a>
-        <a class="dropdown-item" href="#">Grass</a>
-        <a class="dropdown-item" href="#">Ground</a>
-        <a class="dropdown-item" href="#">Ice</a>
-        <a class="dropdown-item" href="#">Normal</a>
-        <a class="dropdown-item" href="#">Poison</a>
-        <a class="dropdown-item" href="#">Psychic</a>
-        <a class="dropdown-item" href="#">Rock</a>
-        <a class="dropdown-item" href="#">Water</a>
-      </div>
-    </div>
-  </div>
-  <!-- ###### DROP DOWN - WEAKNESSES ###### -->
-  <div class="weakness-options">
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle bg-white text-dark" type="button" id="dropdownMenuButton"
-        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Pokemon Weakness
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Bug</a>
-        <a class="dropdown-item" href="#">Dragon</a>
-        <a class="dropdown-item" href="#">Electric</a>
-        <a class="dropdown-item" href="#">Fighting</a>
-        <a class="dropdown-item" href="#">Fire</a>
-        <a class="dropdown-item" href="#">Flying</a>
-        <a class="dropdown-item" href="#">Ghost</a>
-        <a class="dropdown-item" href="#">Grass</a>
-        <a class="dropdown-item" href="#">Ground</a>
-        <a class="dropdown-item" href="#">Ice</a>
-        <a class="dropdown-item" href="#">Normal</a>
-        <a class="dropdown-item" href="#">Poison</a>
-        <a class="dropdown-item" href="#">Psychic</a>
-        <a class="dropdown-item" href="#">Rock</a>
-        <a class="dropdown-item" href="#">Water</a>
-      </div>
-    </div>
-  </div>
   </section>
-</section>
-<!-- ########### MAIN CONTENT END ###### -->
-<!-- ----------------------------------- -->
-<!-- ##### OUTPUT AREA START #####- UNDER CONSTRUCTION -->
-<!-- ##### OUTPUT AREA END #####- UNDER CONSTRUCTION -->
-<!-- ----------------------------------- -->
-<!-- ########### SCRIPT START ########## -->
-<script src="./assets/js/music.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<!-- ########### SCRIPT END ############ -->
+  <!-- ########### MAIN CONTENT END ###### -->
+  <!-- ----------------------------------- -->
+  <!-- ##### OUTPUT AREA START #####- UNDER CONSTRUCTION -->
+  <!-- ##### OUTPUT AREA END #####- UNDER CONSTRUCTION -->
+  <!-- ----------------------------------- -->
+  <!-- ########### SCRIPT START ########## -->
+  <script src="./assets/js/music.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!-- ########### SCRIPT END ############ -->
 </body>
 </html>

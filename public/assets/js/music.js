@@ -1,4 +1,8 @@
+const welcomeBox = document.querySelector('#welcomeBox')
+const mainBox = document.querySelector('#mainBox')
+const filterBox = document.querySelector('#filterBox')
 const musicContainer = document.querySelector('.music-container')
+const navbarColor = document.querySelector('#navbarColor')
 const imgContainer = document.querySelector('.music-player')
 const playBtn = document.querySelector('#play')
 const prevBtn = document.querySelector('#prev')
@@ -12,6 +16,7 @@ const ballClicker = document.querySelector('#catcher')
 const slider = document.querySelector("input")
 const lightBtn = document.querySelector('#light')
 const darkBtn = document.querySelector('#dark')
+const line = document.querySelector('#line')
 
 //Song Titles
 const songs = ['Azalea Town', 'Lavender Town', 'Friendly Shop', 'Littleroot Town']
@@ -82,7 +87,54 @@ function setProgress(e) {
     audio.currentTime = (clickX / width) * duration
 }
 
-function lightMode(e) {
+function lightMode() {
+    welcomeBox.classList.remove('content-box-dark')
+    welcomeBox.classList.add('content-box')
+    filterBox.classList.remove('content-box-dark')
+    filterBox.classList.add('content-box')
+    
+
+    musicContainer.classList.remove('music-container-dark')
+    musicContainer.classList.add('music-container')
+
+    playBtn.classList.remove('action-btn-dark')
+    playBtn.classList.add('action-btn')
+    prevBtn.classList.remove('action-btn-dark')
+    prevBtn.classList.add('action-btn')
+    nextBtn.classList.remove('action-btn-dark')
+    nextBtn.classList.add('action-btn')
+
+    document.body.classList.remove('dark-body')
+    
+    navbarColor.classList.remove('navbar-dark')
+    navbarColor.classList.add('navbar')
+
+    line.src = "./assets/img/vertical-line.png"
+}
+
+function darkMode() {
+    welcomeBox.classList.remove('content-box')
+    welcomeBox.classList.add('content-box-dark')
+    filterBox.classList.remove('content-box')
+    filterBox.classList.add('content-box-dark')
+    
+
+    musicContainer.classList.remove('music-container')
+    musicContainer.classList.add('music-container-dark')
+
+    playBtn.classList.remove('action-btn')
+    playBtn.classList.add('action-btn-dark')
+    prevBtn.classList.remove('action-btn')
+    prevBtn.classList.add('action-btn-dark')
+    nextBtn.classList.remove('action-btn')
+    nextBtn.classList.add('action-btn-dark')
+
+    document.body.classList.add('dark-body')
+    
+    navbarColor.classList.remove('navbar-dark')
+    navbarColor.classList.add('navbar-dark')
+
+    line.src = "./assets/img/white-line.png"
 }
 
 //VOLUME SLIDER
