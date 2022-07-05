@@ -1,19 +1,3 @@
-//search by click
-// document.getElementById("searchBtn").onclick = function () {
-//   event.preventDefault()
-//   //Code for search functionality goes here
-
-
-// }
-
-//search by button enter
-// var input = document.getElementById("searchTerm")
-// input.addEventListener('keypress', function (event) {
-//   if (event.key === "Enter") {
-//     event.preventDefault()
-//     //Code for search functionality goes here
-//   }
-// })
 
 async function getPokemon() {
   try {
@@ -49,14 +33,4 @@ getPokemon()
   })
 
 
-  getPokemon()
-  // .catch(err => console.error(err))
 
-
-  // document.getElementById("pokemon_name").innerText = pokemon[0].name
-    // document.getElementById("pokemon_id").innerText = pokemon[0].id
-    // document.getElementById("pokemon_type").innerText = pokemon[0].type
-    // document.getElementById("pokemon_weakness").innerText = pokemon[0].weakness
-    // document.getElementById("pokemon_health").innerText = pokemon[0].Health
-    // document.getElementById("pokemon_summary").innerText = pokemon[0].summary
-    // document.getElementById("pokemon_image").setAttribute("src", pokemon[0].image_url)
