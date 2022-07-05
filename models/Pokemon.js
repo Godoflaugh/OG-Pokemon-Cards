@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Pokemon extends Model {}
+class Pokemon extends Model { }
 
 Pokemon.init(
   {
@@ -15,12 +15,20 @@ Pokemon.init(
       type: DataTypes.STRING(50),
       allowNull: false,
     },
-    imageUrl: {
+    image_url: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     type: {
-      type: DataTypes.STRING(30),
+      type: DataTypes.STRING(50),
+      allowNull: false,
+    },
+    weakness: {
+      type: DataTypes.STRING(50),
+      allowNull: false,
+    },
+    Health: {
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     summary: {
@@ -33,7 +41,7 @@ Pokemon.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'pokemon_gen1',
+    modelName: 'pokemon',
   }
 );
 

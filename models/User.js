@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Deck extends Model {}
+class User extends Model {}
 
-Deck.init(
+User.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,18 +11,23 @@ Deck.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    username: {
       type: DataTypes.STRING(50),
       allowNull: false,
+      unique: true,
     },
+    passwordHash: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    }
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'deck',
+    modelName: 'user',
   }
 );
 
-module.exports = Deck;
+module.exports = User;
