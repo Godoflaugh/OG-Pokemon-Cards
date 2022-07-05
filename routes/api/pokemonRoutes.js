@@ -94,7 +94,7 @@ router.get('/all', (req, res) => {
             'summary',
         ]
     })
-        .then(pokemondata => res.json(pokemondata))
+        .then(pokemonAll => res.json(pokemonAll))
         .catch(err => {
             console.log(err)
             res.status(500).json(err)
@@ -117,7 +117,7 @@ router.get('/:name', (req, res) => {
             'summary',
         ]
     })
-        .then(data => res.json(data))
+        .then(pokemonName => res.json(pokemonName))
         .catch(err => {
             console.log("Try again, name not found")
             res.status(500).json(err)
