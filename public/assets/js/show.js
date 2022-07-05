@@ -1,19 +1,3 @@
-//search by click
-// document.getElementById("searchBtn").onclick = function () {
-//   event.preventDefault()
-//   //Code for search functionality goes here
-
-
-// }
-
-//search by button enter
-// var input = document.getElementById("searchTerm")
-// input.addEventListener('keypress', function (event) {
-//   if (event.key === "Enter") {
-//     event.preventDefault()
-//     //Code for search functionality goes here
-//   }
-// })
 
 async function getPokemon() {
   try {
@@ -37,11 +21,11 @@ getPokemon()
       <p>Type: ${pokemon[i].type}</p>
       <p>Weakness: ${pokemon[i].weakness}</p>
       <p>Health: ${pokemon[i].Health}</p>
-      <img src="${pokemon[i].image_url}" style="width:150px; height:150px></img>
+      <img src="${pokemon[i].image_url}" style="width:150px; height:150px;"></img>
       <p>Summary: ${pokemon[i].summary}</p>
       <hr>
       `
-
+      window.onload = function () { window.location.reload() }
       document.getElementById("pokemonRender").append(pokeElement)
       // document.getElementById("image").setAttribute("src", pokemon[i].image_url)
 
