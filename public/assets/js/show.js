@@ -26,5 +26,7 @@ getPokemon()
       <hr>
       `
       document.getElementById("pokemonRender").append(pokeElement)
+      pokeElement.classList.add('renderCard')
     }
   })
+
