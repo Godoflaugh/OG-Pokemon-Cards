@@ -6,7 +6,7 @@ input.addEventListener('keypress', function (event) {
     //Code for search functionality goes here
     var inputValue = document.getElementById("searchTerm").value
 
-    searchPokemons({"name": inputValue})
+    searchPokemons({ "name": inputValue })
       .then(pokemons => {
 
         console.log(pokemons)
@@ -30,6 +30,7 @@ input.addEventListener('keypress', function (event) {
           pokemonRenderEl.append(pokeElement)
         }
       })
+
   }
 })
 

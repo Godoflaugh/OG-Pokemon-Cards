@@ -29,3 +29,4 @@ getPokemon()
       pokeElement.classList.add('renderCard')
     }
   })
+
