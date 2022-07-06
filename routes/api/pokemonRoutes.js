@@ -12,8 +12,8 @@ async function authMiddleware(req, res, next) {
 }
 
 //Find all pokemon
-router.get('/search', authMiddleware, async (req, res) => {
-    const { name, type, summary } = req.query
+router.get('/search', /*authMiddleware,*/ async (req, res) => {
+    const { name, type, weakness } = req.query
 
     const foundPokemons = await Pokemon.findAll({
         where: {
@@ -27,9 +27,9 @@ router.get('/search', authMiddleware, async (req, res) => {
                     [Op.like]: `%${type}%`
                 }
             },
-            ...(summary) && {
-                summary: {
-                    [Op.like]: `%${summary}%`
+            ...(weakness) && {
+                weakness: {
+                    [Op.like]: `%${weakness}%`
                 }
             },
         }
@@ -105,7 +105,9 @@ router.get('/all', (req, res) => {
 router.get('/:name', (req, res) => {
     Pokemon.findOne({
         where: {
-            name: req.params.name
+            name: {
+                [Op.like]: `%${req.params.name}%`
+            }
         },
         attributes: [
             'id',

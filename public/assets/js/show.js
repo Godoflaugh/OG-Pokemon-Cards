@@ -12,7 +12,7 @@ getPokemon()
   .then(pokemon => {
     console.log(pokemon)
     //for loop to populate the pokemon data
-    for (var i = 0; i <= pokemon.length; i++) {
+    for (var i = 0; i < pokemon.length; i++) {
 
       const pokeElement = document.createElement('div')
       pokeElement.innerHTML = `
@@ -25,7 +25,7 @@ getPokemon()
       <p>Summary: ${pokemon[i].summary}</p>
       <hr>
       `
-      window.onload = function () { window.location.reload() }
+      // window.onload = function () { window.location.reload() }
       document.getElementById("pokemonRender").append(pokeElement)
       // document.getElementById("image").setAttribute("src", pokemon[i].image_url)
 
