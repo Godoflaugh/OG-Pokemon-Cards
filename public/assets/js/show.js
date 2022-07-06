@@ -28,7 +28,7 @@ getPokemon()
       // window.onload = function () { window.location.reload() }
       document.getElementById("pokemonRender").append(pokeElement)
       // document.getElementById("image").setAttribute("src", pokemon[i].image_url)
-
+      pokeElement.classList.add('renderCard')
     }
   })
   // .catch(err => console.error(err))
