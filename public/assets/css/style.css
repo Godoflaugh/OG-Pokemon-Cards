@@ -23,6 +23,26 @@ body {
   -ms-transition: 1s;
   -o-transition: 1s;
 }
+.footerColor{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--main-color);
+  border: 5px;
+  border-top-style: solid;
+  border-top-color: rgb(201, 21, 21);
+  transition: 1s;
+  -webkit-transition:;
+  -moz-transition:;
+  -ms-transition:;
+  -o-transition:;
+  width: 100%;
+  font-size: larger;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding: 10px;
+  
+}
 
 .navbarColor {
   background-color: var(--main-color);
