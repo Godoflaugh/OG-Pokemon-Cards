@@ -31,13 +31,12 @@ input.addEventListener('keypress', function (event) {
           pokeElement.classList.add('renderCard')
         }
       })
-
   }
 })
 
 
 
-//Click event
+//Click event handler
 
 document.getElementById('searchBtn').onclick = function () {
   event.preventDefault()
