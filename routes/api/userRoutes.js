@@ -4,20 +4,20 @@ const bcrypt = require('bcrypt')
 const User = require('../../models/User')
 
 router.get('/', async (req, res) => {
-  req.session.reload((err) => {
-    if (err) console.log("err" + err)
-    console.log(req.headers)
-    console.log(req.session)
-    res.status(200).json({ currUserId: req.session.userId })
+  req.session.reload(async (err) => {
+    if (err) {
+      res.status(401).json({ error: "No user is logged in."}) 
+    } else {
+      const { id, username } = await User.findOne({ where: { id: req.session.userId }})
+      res.status(200).json({ id, username })
+    }
   })
 })
 
 router.post('/login', async (req, res, next) => {
   const { username, password } = req.body
 
-  console.log(username)
   const existingUser = await User.findOne({ where: { username: username } })
-  console.log(existingUser)
   if (existingUser == null) {
     return res.status(400).json({ error: "Username is not in the db" })
   }
@@ -34,10 +34,11 @@ router.post('/login', async (req, res, next) => {
 
       // save the session before redirection to ensure page
       // load does not happen before session is saved
-      req.session.save((err) => {
+      req.session.save(async (err) => {
         if (err) return next(err)
         // res.redirect('/')
-        res.status(200).json({ success: true })
+        const { id, username } = await User.findOne({ where: { id: req.session.userId }})
+        res.status(200).json({ id, username })
       })
     })
   } else {
@@ -49,9 +50,7 @@ router.post('/login', async (req, res, next) => {
 router.post('/signup', async (req, res, next) => {
   try {
     const passwordHash = await bcrypt.hash(req.body.password, 10)
-    console.log(passwordHash)
     const createdUser = await User.create({ username: req.body.username, passwordHash })
-    console.log(createdUser.id)
 
     // Login / Create a session
     req.session.regenerate((err) => {
@@ -62,10 +61,11 @@ router.post('/signup', async (req, res, next) => {
 
       // save the session before redirection to ensure page
       // load does not happen before session is saved
-      req.session.save((err) => {
+      req.session.save(async (err) => {
         if (err) return next(err)
         // res.redirect('/')
-        res.status(200).json({ success: "true" })
+        const { id, username } = await User.findOne({ where: { id: req.session.userId }})
+        res.status(200).json({ id, username })
       })
     })
 
