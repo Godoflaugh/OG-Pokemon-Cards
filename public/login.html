@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="./assets/favicon/site.webmanifest">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <title>PokéStats</title>
+</head>
+
+<body>
+  <!-- ###### NAV BAR START ##### -->
+  <nav id="navbarColor" class="navbarColor navbar mb-5">
+    <div class="container-fluid">
+      <h1 class="navbar-brand">PokéStats</h1>
+      <a href="./index.html">
+        <img id="pokeball" src="./assets/img/logo.gif" alt="pokeball">
+      </a>
+      <div class="d-flex">
+        <button id="navbutt" class="btn btn-primary m-1" type="submit">Login</button>
+
+        <a id="fav" class="btn btn-danger m-1" href="./favorites.html">Favorites</a>
+        <button id="navbutt" class="btn btn-secondary m-1" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasExample" aria-controls="sidebar">Settings</button>
+      </div>
+    </div>
+  </nav>
+  <!-- ###### NAV BAR END ####### -->
+  <!-- ----------------------------->
+  <!-- #### OFFCANVAS START ##### -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="sidebar-label">
+    <div class="offcanvas-header">
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      <h3 class="offcanvas-title" id="offcanvasExampleLabel">Settings</h3>
+    </div>
+    <div class="offcanvas-body mx-auto">
+      <section class="theme-controller">
+        <h1 class="display-4 mt-2 mx-auto">Theme</h1>
+        <button id="light" type="button" class="btn btn-light">Light</button>
+        <button id="dark" type="button" class="btn btn-dark">Dark</button>
+      </section>
+      <section class="music-controller">
+        <h1 class="display-4 mt-2">Music Controls</h1>
+        <h4 class="mt-2">Volume</h4>
+        <div class="slider-cont">
+          <div class="slider">
+            <input id="volume-control" type="range" min="0" max="100" value="50">
+            <progress min="0" max="100" value="50"></progress>
+          </div>
+          <div class="sliderValue">50</div>
+        </div>
+        <div class="dropdown mt-3">
+          <button id="navbutt" class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton"
+            data-bs-toggle="dropdown">Song Selection</button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="#">Littleroot Town</a></li>
+            <li><a class="dropdown-item" href="#">Azalea Town</a></li>
+            <li><a class="dropdown-item" href="#">Lavender Town</a></li>
+            <li><a class="dropdown-item" href="#">Friendly Shop</a></li>
+            <li><a class="dropdown-item" href="#">Random Mix</a></li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <div class="authors offcanvas-foote mx-auto">
+      <h4 class="display-4">Created by</h4>
+      <div class="d-flex">
+        <p>Dante Stargiotti</p>
+        <p>Lam Nong</p>
+        <p>Kevin Lam</p>
+        <p>Parin Thalangdee</p>
+      </div>
+    </div>
+  </div>
+  <!-- ##### OFFCANVAS END ###### -->
+  <!-- ----------------------------->
+  <!-- ##### WELCOME START ###### -->
+  <section id="welcomeBox" class="content-box">
+    <section class="display-1 text-center">
+      <p>Login!</p>
+    </section>
+    <section class="welcome-content">
+      <section class="about-content">
+        <h1 class="display-4"></h1>
+        <p class="lead">PokéStats is an online library of pokemon cards that you can use to see information about
+          Pokémon!</p>
+        <hr class="my-3">
+
+        <div class="row justify-space-between-md">
+          <div class="login-card">
+            <h2 class="page-title">Login</h2>
+            <form class="form login-form">
+              <div class="form-group">
+                <label for="email-login">Email:</label>
+                <input class="form-input" type="text" id="email-login" />
+              </div>
+              <div class="form-group">
+                <label for="password-login">Password:</label>
+                <input class="form-input" type="password" id="password-login" />
+              </div>
+              <div class="form-group">
+                <button class="btn btn-primary" type="submit">login</button>
+              </div>
+            </form>
+          </div>
+          <div class="login-card">
+            <h2 class="page-title">Signup</h2>
+            <form class="form signup-form">
+              <div class="form-group">
+                <label for="username-signup">Username:</label>
+                <input class="form-input" type="text" id="username-signup" />
+              </div>
+              <div class="form-group">
+                <label for="email-signup">Email:</label>
+                <input class="form-input" type="text" id="email-signup" />
+              </div>
+              <div class="form-group">
+                <label for="password-signup">Password:</label>
+                <input class="form-input" type="password" id="password-signup" />
+              </div>
+              <div class="form-group">
+                <button class="btn btn-primary" type="submit">signup</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+      </section>
+
+    
+    </section>
+  </section>
+  <!-- ####### WELCOME END ###### -->
+  <!-- ----------------------------->
+  <!-- ### MAIN CONTENT START ### -->
+  
+  <!-- #### MAIN CONTENT END #### -->
+  <!-- ----------------------------->
+  <!-- ####### FILTER START ##### -->
+  
+
+  <footer class=" footerColor container-fluid" id="navbarColor">
+
+    <p>Dante Stargiotti || Lam Nong</p>
+    <img id="pokeball" src="./assets/img/logo.gif" alt="pokeball">
+    <p>Kevin Lam || Parin Thalangdee</p>
+
+
+
+  </footer>
+  <!-- ####### FILTER END ####### -->
+  <!-- ----------------------------->
+  <!-- #### OUTPUT AREA START ### -->
+  <!-- ##### OUTPUT AREA END #### -->
+  <!-- ----------------------------->
+  <!-- ####### SCRIPT START ##### -->
+  <script src="./assets/js/music.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="./assets/js/show.js"></script>
+  <script src="./assets/js/searchone.js"></script>
+  <script src="./assets/js/login.js"></script>
+  <!-- ####### SCRIPT END ####### -->
+</body>
+
+</html>

@@ -514,6 +514,7 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   padding: 40px;
+
 }
 
 .renderCard {
@@ -528,7 +529,7 @@ body {
   background-color: rgb(33, 64, 185);
   border: 10px solid rgb(235, 217, 57);
   color: white;
-  font-size: 20px;
+  font-size: 13px;
   font-weight: 600;
   box-shadow:    0px 0px 1.2px rgba(0, 0, 0, 0.073),    0px 0px 4px rgba(0, 0, 0, 0.107),    0px 0px 18px rgba(0, 0, 0, 0.18);
   transition: 1s;
@@ -536,6 +537,9 @@ body {
   -moz-transition: 1s;
   -ms-transition: 1s;
   -o-transition: 1s;
+  background: rgb(2,0,36);
+background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 30%, rgba(0,212,255,1) 100%);
+
 }
 
 .renderCard:hover {
