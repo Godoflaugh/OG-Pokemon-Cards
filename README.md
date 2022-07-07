@@ -37,6 +37,9 @@
   Please contact us using the following links:
 
   Kevin Lam [Github](https://github.com/godoflaugh)
+  
   Lam Nong [Github](https://github.com/lamnong)
+  
   Dante Stargiotti [Github](https://github.com/modjeska)
+  
   Parin Thalangdee [Github](https://github.com/parinthalangdee)
