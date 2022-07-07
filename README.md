@@ -7,7 +7,8 @@
 
   ## Table-of-Contents
 
-  * [Description](#description)  
+  * [Description](#description)
+  * [Deployed Application Link](#link)  
   * [License](#license)    
   * [Contributing](#contributing)
   * [Questions](#questions)
@@ -17,6 +18,10 @@
   This application will serve as a quick reference for Pokemon Trading Card game enthusiast who need to lookup stats and information for each card.
 
   Usage can vary depending on user. One may simply need their information for their own projects while some may need the information for competitions or deck building.
+  
+  ## [Deployed Application Link](#table-of-contents)
+  
+  [Deployed Link on Heroku](https://damp-meadow-22664.herokuapp.com/)
 
   ## [License](#table-of-contents)
 
