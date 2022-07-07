@@ -1,17 +1,19 @@
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
-  const email = document.querySelector('#email-login').value.trim();
+  const username = document.querySelector('#username-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();
 
-  if (email && password) {
+  if (username && password) {
     const response = await fetch('/api/users/login', {
       method: 'POST',
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ username, password }),
       headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
+      let bodyResponse = await response.json();
+      storeUsernameIntoLocalStorage(bodyResponse.username)
       document.location.replace('/');
     } else {
       alert('Failed to log in.');
@@ -34,6 +36,8 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
+      let bodyResponse = await response.json();
+      storeUsernameIntoLocalStorage(bodyResponse.username)
       document.location.replace('/');
     } else {
       alert('Failed to sign up.');
@@ -41,10 +45,51 @@ const signupFormHandler = async (event) => {
   }
 };
 
-document
-  .querySelector('.login-form')
-  .addEventListener('submit', loginFormHandler);
+async function checkSession() {
+  const response = await fetch('/api/users/', {
+    method: 'GET'
+  })
 
-document
-  .querySelector('.signup-form')
-  .addEventListener('submit', signupFormHandler);
+  if (response.ok) {
+    // let bodyResponse = await response.json();
+    // storeUsernameIntoSessionStorage(bodyResponse.username)
+
+    // STOP DISPLAYING LOGIN BUTTON
+    console.log(getUsernameFromLocalStorage())
+    const loginButton = document.getElementsByClassName('login-button')[0]
+    loginButton.remove()
+
+    const buttonContainer = document.getElementsByClassName('button-container')[0]
+    const usernameContainer = document.createElement('div')
+    usernameContainer.innerHTML = `<p>Hello ${getUsernameFromLocalStorage()},</p>`
+    buttonContainer.insertBefore(usernameContainer, buttonContainer.children[0])
+  } else {
+    clearUsernameInLocalStorage();
+  } 
+}
+
+function storeUsernameIntoLocalStorage(username) {
+  localStorage.setItem("currentUser", username)
+}
+
+function clearUsernameInLocalStorage() {
+  localStorage.removeItem("currentUser")
+}
+
+// Get current logged in user
+function getUsernameFromLocalStorage(username) {
+  return localStorage.getItem("currentUser")
+}
+
+// Check session everytime the website loads or reloads.
+checkSession()
+
+const loginForm = document.querySelector('.login-form')
+if (loginForm) {
+  loginForm.addEventListener('submit', loginFormHandler);
+}
+
+const signupForm = document.querySelector('.signup-form')
+if (signupForm) {
+  signupForm.addEventListener('submit', signupFormHandler);
+}
